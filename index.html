@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Water Bill Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Water Bill Calculator</h1>
+        
+        <div class="input-section">
+            <h2>Main Meter</h2>
+            <div class="input-group">
+                <label for="previous-main">Previous Reading:</label>
+                <input type="number" id="previous-main" step="0.01" min="0">
+            </div>
+            <div class="input-group">
+                <label for="current-main">Current Reading:</label>
+                <input type="number" id="current-main" step="0.01" min="0">
+            </div>
+            <div class="input-group">
+                <label for="bill-amount">Total Bill Amount (₱):</label>
+                <input type="number" id="bill-amount" step="0.01" min="0">
+            </div>
+        </div>
+        
+        <div class="units-section">
+            <h2>Unit Meters</h2>
+            
+            <div class="unit">
+                <h3>Unit 1</h3>
+                <div class="input-group">
+                    <label for="previous-unit1">Previous Reading:</label>
+                    <input type="number" id="previous-unit1" step="0.01" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="current-unit1">Current Reading:</label>
+                    <input type="number" id="current-unit1" step="0.01" min="0">
+                </div>
+            </div>
+            
+            <div class="unit">
+                <h3>Unit 2</h3>
+                <div class="input-group">
+                    <label for="previous-unit2">Previous Reading:</label>
+                    <input type="number" id="previous-unit2" step="0.01" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="current-unit2">Current Reading:</label>
+                    <input type="number" id="current-unit2" step="0.01" min="0">
+                </div>
+            </div>
+            
+            <div class="unit">
+                <h3>Unit 3</h3>
+                <div class="input-group">
+                    <label for="previous-unit3">Previous Reading:</label>
+                    <input type="number" id="previous-unit3" step="0.01" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="current-unit3">Current Reading:</label>
+                    <input type="number" id="current-unit3" step="0.01" min="0">
+                </div>
+            </div>
+        </div>
+        
+        <button id="calculate-btn">Calculate Payments</button>
+        
+        <div id="results" class="hidden">
+            <h2>Payment Breakdown</h2>
+            <div class="result-group">
+                <p>Total Consumption: <span id="total-consumption">0</span> m³</p>
+                <p>Rate per m³: ₱<span id="rate-per-cubic">0.00</span></p>
+            </div>
+            
+            <div class="unit-result">
+                <h3>Unit 1</h3>
+                <p>Consumption: <span id="unit1-consumption">0</span> m³</p>
+                <p>Payment: ₱<span id="unit1-payment">0.00</span></p>
+            </div>
+            
+            <div class="unit-result">
+                <h3>Unit 2</h3>
+                <p>Consumption: <span id="unit2-consumption">0</span> m³</p>
+                <p>Payment: ₱<span id="unit2-payment">0.00</span></p>
+            </div>
+            
+            <div class="unit-result">
+                <h3>Unit 3</h3>
+                <p>Consumption: <span id="unit3-consumption">0</span> m³</p>
+                <p>Payment: ₱<span id="unit3-payment">0.00</span></p>
+            </div>
+            
+            <div class="result-group">
+                <p>Common Area Consumption: <span id="common-consumption">0</span> m³</p>
+                <p>Common Area Payment: ₱<span id="common-payment">0.00</span> (divided equally)</p>
+            </div>
+            
+            <div class="result-group total">
+                <p><strong>Total Payment per Unit:</strong></p>
+                <p>Unit 1: ₱<span id="unit1-total">0.00</span></p>
+                <p>Unit 2: ₱<span id="unit2-total">0.00</span></p>
+                <p>Unit 3: ₱<span id="unit3-total">0.00</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
